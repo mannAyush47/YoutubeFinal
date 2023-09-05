@@ -1,4 +1,4 @@
-const Google_Api_key = "AIzaSyD-2koIDwzJxs1v7TagD6fAqVseRfQ0v00"
+const Google_Api_key = "AIzaSyD-2koIDwzJxs1v7TfgbgfbgfbagD6fAqVseRfQ0v00"
 
 export const youtube_popular_Api =
 `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&regionCode=IN&maxResults=50&key=${Google_Api_key}`
