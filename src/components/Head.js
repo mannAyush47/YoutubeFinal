@@ -1,8 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleMenu } from "../utils/redux.js/appSlice";
-import { Youtube_sugeestions_api } from "../utils/constants";
+import {
+  Searched_Videos_api,
+  Youtube_sugeestions_api,
+} from "../utils/constants";
 import { cacheResults } from "../utils/redux.js/searchSlice";
+
+
 
 const Head = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -27,7 +32,7 @@ const Head = () => {
 
     const json = await data.json();
 
-    console.log(json[1]);
+    // console.log(json[1]);
     setSuggestions(json[1]);
 
     Dispatch(
@@ -53,8 +58,10 @@ const Head = () => {
     };
   }, [searchQuery]);
 
+
+
   return (
-    <div className="sticky grid grid-flow-col p-5 m-1 shadow-xl w-12/12">
+    <div className="fixed bg-white grid grid-flow-col p-5  shadow-xl w-full">
       <div className="flex col-span-1">
         <img
           onClick={() => toggleMenuHandlerDispatchAction()}

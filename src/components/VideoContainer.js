@@ -15,13 +15,13 @@ const VideoContainer = () => {
     const data = await fetch(youtube_popular_Api);
     const json = await data.json();
     setVideosPopular(json.items);
-    // console.log(json);
+    console.log(youtube_popular_Api);
   };
 
   return (
-    <div className="flex flex-wrap">
+    <div className="flex flex-wrap justify-center">
       {popularvideos.map((video) => (
-        <Link to={"/watch?v="+ video.id}>
+        <Link to={"/watch?v="+ video.id + "&channelId="+video.snippet.channelId + "&title=" + video.snippet.title }>
           <VideoCard key={video.id} info={video} />
         </Link>
       ))}
